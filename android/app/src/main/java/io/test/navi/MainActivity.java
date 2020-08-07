@@ -1,4 +1,4 @@
-package com.bare;
+package io.test.navi;
 
 import android.os.Bundle;
 

@@ -1,9 +1,9 @@
 {
-  "name": "bare",
-  "displayName": "bare",
+  "name": "NaviBare",
+  "displayName": "NaviBare",
   "expo": {
-    "name": "bare",
-    "slug": "bare",
+    "name": "NaviBare",
+    "slug": "NaviBare",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"

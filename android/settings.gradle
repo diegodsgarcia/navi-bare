@@ -1,4 +1,4 @@
-rootProject.name = 'bare'
+rootProject.name = 'NaviBare'
 
 apply from: '../node_modules/react-native-unimodules/gradle.groovy'
 includeUnimodulesProjects()

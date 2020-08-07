@@ -1,4 +1,4 @@
-package com.bare.generated;
+package io.test.navi.generated;
 
 import java.util.Arrays;
 import java.util.List;

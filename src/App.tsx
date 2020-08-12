@@ -3,9 +3,10 @@ import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, View, Alert } from 'react-native'
 
 import messaging from '@react-native-firebase/messaging'
-import { requestUserPermission, getToken } from './service/notification'
+import { requestUserPermission, sendNotification, getToken } from './service/notification'
 
 import Navi from './components/Navi'
+import Modal from './components/Modal'
 import Text from './components/Text'
 import Button from './components/Button'
 
@@ -25,6 +26,16 @@ export default function App() {
     })
   }
 
+  const onSendNotification = (values: {token: string, title: string, body: string}) => {
+    setOpenModal(false)
+  
+    sendNotification(values)
+      .catch((error) => {
+        console.log(error)
+        Alert.alert('Ops! Servidor indisponível')
+      })
+  }
+
   useEffect(() => {
     requestUserPermission()
     getToken().then(setToken)
@@ -40,6 +51,12 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Navi />
+      <Modal
+        token={token} 
+        visible={openModal}
+        onRequestClose={() => setOpenModal(false)}
+        onRequestSend={onSendNotification}
+      />
       <StatusBar style="auto" />
       <Button onPress={() => setOpenModal(true)}>
         Heey!

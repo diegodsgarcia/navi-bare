@@ -3,6 +3,7 @@
 .DS_Store
 .env
 service-account-file.json
+GoogleService-Info.plist
 
 # Xcode
 #
